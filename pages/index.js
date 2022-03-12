@@ -13,6 +13,8 @@ export default function Home() {
 		dispatch(fetchUsers());
 	}, [dispatch]);
 
+	console.log('Loading', loading);
+
 	const displayButtons = () => {
 		const buttons = [];
 		for (let i = 1; i <= users.total; i++) {

@@ -5,7 +5,7 @@ const Card = ({ user }) => {
 	const [firstName, setFirstName] = useState('Manish');
 	const [lastName, setLastName] = useState('Sharma');
 	const [email, setEmail] = useState('sharmamanish8301@gmail.com');
-	const [avatar, setAvatar] = useState('http://via.placeholder.com/70/fff');
+	const [avatar, setAvatar] = useState('http://via.placeholder.com/100/000');
 
 	useEffect(() => {
 		if (Object.keys(user).length != 0) {
@@ -17,25 +17,30 @@ const Card = ({ user }) => {
 	}, [user]);
 
 	return (
-		<div>
-			<div className="bg-gray-900 rounded-xl mb-10 p-10">
-				<div className="flex">
+		<>
+			<div className="card rounded-xl mb-10 p-10">
+				<div className="mx-auto text-center justify-center">
 					<div className="my-auto h-full mr-5">
 						<Image
 							className="rounded-full"
 							src={avatar}
 							alt="Picture of the author"
-							width={70}
-							height={70}
+							width={100}
+							height={100}
 						/>
 					</div>
 					<div>
-						<h1 className="text-4xl">{`${firstName} ${lastName}`}</h1>
-						<h3 className="text-xl mt-3 text-gray-400">{`Email: ${email}`}</h3>
+						<h1 className="text-4xl font-bold">{`${firstName} ${lastName}`}</h1>
+						<a
+							href={`mailto: ${email}`}
+							className="block mt-3 text-xl text-gray-100"
+						>
+							{email}
+						</a>
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
