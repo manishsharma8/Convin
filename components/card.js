@@ -26,7 +26,7 @@ const Card = ({ user }) => {
 		<>
 			<div className="card rounded-xl mb-10 p-5 md:p-10">
 				<div className="mx-auto text-center justify-center">
-					<div className="my-auto h-full mr-5">
+					<div className="h-full">
 						<Image
 							className="rounded-full"
 							src={avatar}
@@ -39,7 +39,7 @@ const Card = ({ user }) => {
 						<h1 className="text-4xl font-bold">{`${firstName} ${lastName}`}</h1>
 						<a
 							href={`mailto: ${email}`}
-							className="block mt-3 text-xl text-gray-100"
+							className="block break-words mt-3 text-xl text-gray-100"
 						>
 							{email}
 						</a>
