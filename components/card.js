@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import {
+	demoAvatar,
+	demoEmail,
+	demoFirstName,
+	demoLastName,
+} from '../utils/config';
 
 const Card = ({ user }) => {
-	const [firstName, setFirstName] = useState('Manish');
-	const [lastName, setLastName] = useState('Sharma');
-	const [email, setEmail] = useState('sharmamanish8301@gmail.com');
-	const [avatar, setAvatar] = useState('http://via.placeholder.com/100/000');
+	const [firstName, setFirstName] = useState(demoFirstName);
+	const [lastName, setLastName] = useState(demoLastName);
+	const [email, setEmail] = useState(demoEmail);
+	const [avatar, setAvatar] = useState(demoAvatar);
 
 	useEffect(() => {
 		if (Object.keys(user).length != 0) {
@@ -18,7 +24,7 @@ const Card = ({ user }) => {
 
 	return (
 		<>
-			<div className="card rounded-xl mb-10 p-10">
+			<div className="card rounded-xl mb-10 p-5 md:p-10">
 				<div className="mx-auto text-center justify-center">
 					<div className="my-auto h-full mr-5">
 						<Image

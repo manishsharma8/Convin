@@ -13,8 +13,6 @@ export default function Home() {
 		dispatch(fetchUsers());
 	}, [dispatch]);
 
-	console.log('Loading', loading);
-
 	const displayButtons = () => {
 		const buttons = [];
 		for (let i = 1; i <= users.total; i++) {
@@ -37,9 +35,9 @@ export default function Home() {
 					<span></span>
 				</div>
 			) : (
-				<div className="m-28">
+				<div className="m-16 md:28">
 					<Card user={user} />
-					<div className="grid gap-x-20 gap-y-5 grid-cols-6 text-3xl">
+					<div className="grid gap-x-6 md:gap-x-20 gap-y-5 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 text-3xl">
 						{displayButtons()}
 					</div>
 				</div>
