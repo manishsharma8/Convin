@@ -18,6 +18,7 @@ export default function Home() {
 		for (let i = 1; i <= users.total; i++) {
 			buttons.push(
 				<Button
+					key={i}
 					id={i}
 					selectedButton={selectedButton}
 					setSelectedButton={setSelectedButton}

@@ -58,7 +58,6 @@ export function fetchUser(id) {
 		try {
 			const response = await fetch(`https://reqres.in/api/users/${id}`);
 			const data = await response.json();
-			console.log('User', id, data);
 			dispatch(getUserSuccess(data.data));
 		} catch (error) {
 			dispatch(getUsersFailure());

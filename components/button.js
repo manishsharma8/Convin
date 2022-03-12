@@ -9,8 +9,8 @@ const Button = ({ id, selectedButton, setSelectedButton }) => {
 				dispatch(fetchUser(id));
 				setSelectedButton(id);
 			}}
-			className={`py-3 px-2 rounded-xl ${
-				id === selectedButton ? 'bg-blue-700' : 'bg-blue-500'
+			className={`bg-blue-500 py-3 px-2 rounded-xl ${
+				id === selectedButton ? 'ring-4 ring-blue-500/50' : ''
 			}`}
 		>
 			{id}
