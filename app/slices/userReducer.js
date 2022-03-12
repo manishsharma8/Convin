@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { API } from '../../utils/config';
 
 export const initialState = {
 	loading: true,
@@ -41,7 +42,7 @@ export function fetchUsers() {
 	return async (dispatch) => {
 		dispatch(getUsers());
 		try {
-			const response = await fetch('https://reqres.in/api/users');
+			const response = await fetch(`${API}/users`);
 			const data = await response.json();
 			dispatch(getUsersSuccess(data));
 		} catch (error) {
@@ -54,7 +55,7 @@ export function fetchUsers() {
 export function fetchUser(id) {
 	return async (dispatch) => {
 		try {
-			const response = await fetch(`https://reqres.in/api/users/${id}`);
+			const response = await fetch(`${API}/users/${id}`);
 			const data = await response.json();
 			dispatch(getUserSuccess(data.data));
 		} catch (error) {}
