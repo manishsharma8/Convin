@@ -31,11 +31,19 @@ export default function Home() {
 	};
 
 	return (
-		<div className="m-28">
-			<Card user={user} />
-			<div className="grid gap-x-20 gap-y-5 grid-cols-6 text-3xl">
-				{displayButtons()}
-			</div>
-		</div>
+		<>
+			{loading ? (
+				<div className="loader center">
+					<span></span>
+				</div>
+			) : (
+				<div className="m-28">
+					<Card user={user} />
+					<div className="grid gap-x-20 gap-y-5 grid-cols-6 text-3xl">
+						{displayButtons()}
+					</div>
+				</div>
+			)}
+		</>
 	);
 }

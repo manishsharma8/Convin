@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const initialState = {
-	loading: false,
+	loading: true,
 	users: [],
 	user: {},
 	hasErrors: false,
@@ -21,7 +21,6 @@ const usersSlice = createSlice({
 		},
 		getUserSuccess: (state, { payload }) => {
 			state.user = payload;
-			state.loading = false;
 			state.hasErrors = false;
 		},
 		getUsersFailure: (state) => {
@@ -54,13 +53,10 @@ export function fetchUsers() {
 // For Single User
 export function fetchUser(id) {
 	return async (dispatch) => {
-		dispatch(getUsers());
 		try {
 			const response = await fetch(`https://reqres.in/api/users/${id}`);
 			const data = await response.json();
 			dispatch(getUserSuccess(data.data));
-		} catch (error) {
-			dispatch(getUsersFailure());
-		}
+		} catch (error) {}
 	};
 }
