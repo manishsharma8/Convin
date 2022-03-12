@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-	usersSelector,
-	fetchUsers,
-	fetchUser,
-} from '../app/slices/userReducer';
+import { usersSelector, fetchUsers } from '../app/slices/userReducer';
 import Button from '../components/button';
 import Card from '../components/card';
 
@@ -30,8 +26,6 @@ export default function Home() {
 		}
 		return buttons;
 	};
-
-	console.log(selectedButton);
 
 	return (
 		<div className="m-28">
